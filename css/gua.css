@@ -1,0 +1,73 @@
+body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+			}
+
+			.outer {
+				width: 342px;
+				height: 415px;
+				float: left;
+			}
+
+			.inner {
+				height: 45px;
+				width: 34px;
+				margin-bottom: 8px;
+				margin-right: 10px;
+				float: left;
+			}
+			
+			.inner div{
+				background-image: url(../img/bagua.png);
+			}
+
+			.hoverInnerBg {
+				background-color: rgba(239, 52, 115, .1);
+				transform: scale(1.1);
+				box-shadow: 0 0 15px rgba(238,162,164,.5);
+			}
+
+			.topDiv {
+				height: 21px;
+				width: 34px;
+				margin-bottom: 3px;
+			}
+
+			.bottomDiv {
+				height: 21px;
+				width: 34px;
+			}
+
+			.RlastInner {
+				height: 45px;
+				width: 34px;
+				float: left;
+				margin-bottom: 8px;
+			}
+			
+			.RlastInner div{
+				background-image: url(../img/bagua.png);
+			}
+
+			.BlastInner {
+				height: 45px;
+				width: 34px;
+				float: left;
+				margin-right: 10px;
+			}
+			
+			.BlastInner div{
+				background-image: url(../img/bagua.png);
+			}
+
+			.lastInner {
+				height: 45px;
+				width: 34px;
+				float: left;
+			}
+			
+			.lastInner div{
+				background-image: url(../img/bagua.png);
+			}
