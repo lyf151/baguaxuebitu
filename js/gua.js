@@ -1,7 +1,7 @@
-function togglebackimg(innerdiv) {
+function toggleimg(innerdiv) {
 		var subDiv = innerdiv.children;
 		//更换八卦背景图
-		//如果图片位置Y的位置为0则将Y变为-26反之则变为0
+		//如果图片位置Y轴的位置为0则将Y轴变为-26反之则变为0
 		if (subDiv[0].style.backgroundPosition.split(" ")[1] === "0px") {
 			subDiv[0].style.backgroundPosition = subDiv[0].style.backgroundPosition.split(" ")[0] + " " + "-26px";
 		} else if (subDiv[0].style.backgroundPosition.split(" ")[1] === "-26px") {
@@ -15,9 +15,9 @@ function togglebackimg(innerdiv) {
 		}
 	}
 
-function createbugua(obj) {
+function create(obj) {
 	var eArr = [];
-	var position = 0;
+	var index = 0;
 	//两次嵌套循环创建元素
 	for (var i = 0; i < 8; i++) {
 		for (var j = 0; j < 8; j++) {				
@@ -59,21 +59,22 @@ function createbugua(obj) {
 				}
 
 				innerdiv.onclick = function() {
-					backdiv && togglebackimg(backdiv);
-					togglebackimg(this);
-					backdiv = this;
+					backDivStyle && toggleimg(backDivStyle);
+					toggleimg(this);
+					backDivStyle = this;
 				}
-				//设置一个位置信息与对象数组的下标相对应
-				innerdiv.index = position;
+				//为每一个innerdiv设置一个索引且与数组的下标相对应
+				innerdiv.index = index;
 				eArr.push(innerdiv);
-				position += 1;
+				index += 1;
 				obj.appendChild(innerdiv);
 
 			})()
 
 		}
 	}
+	//用于保存当前点的标签，当点击下一个时将其样式替换
+	var backDivStyle;
 	//设置默认选中第一个
-	var backdiv;
 	eArr[0].click();
 }
